@@ -7,26 +7,30 @@ gri = rgb2gray(rgbi);
 [x_ y_] = size(gri);
 
 
-const_a=3;
-const_b=1;
-const_c=0.33;
+const_=[3 1 0.333];
 
 gri2 = im2double(gri);
 gri2 = gri2./max(gri2);
 
-grilog_a=gri2;
-grilog_b=gri2;
-grilog_c=gri2;
+grilog_a=grilog_b=grilog_c=gri2;
 
+r = 0:255;
+r = r/max(r);
+sa_ = const_(1)*log(1+r);
+sb_ = const_(2)*log(1+r);
+sc_ = const_(3)*log(1+r);
 
 for i=1:x_
   for j=1:y_
-    grilog_a(i,j)=const_a*log(1+gri2(i,j));
-    grilog_b(i,j)=const_b*log(1+gri2(i,j));
-    grilog_c(i,j)=const_c*log(1+gri2(i,j));
+    for k = 1:256
+      if gri2(i,j)==r(k)
+        grilog_a(i,j)=sa_(k);
+        grilog_b(i,j)=sb_(k);
+        grilog_c(i,j)=sc_(k);
+      end
+    end
     disp(i)
     disp(j)
-
   end
 end
 

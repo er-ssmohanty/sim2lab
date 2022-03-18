@@ -21,6 +21,12 @@ gri2 = gri2./max(gri2);
 grilog_ax=grilog_bx=grilog_cx=grilog_ay=grilog_by=gri2;
 grilog_cy=grilog_az=grilog_bz=grilog_cz=gri2;
 
+r=0:255;
+r=r./max(r);
+sab=
+sab
+sab
+sab
 
 for i=1:x_
   for j=1:y_
@@ -53,43 +59,43 @@ grilog_bz = grilog_bz./max(grilog_bz);
 grilog_cz = grilog_cz./max(grilog_cz);
 
 
-subplot(3,4,1);
+subplot(4,3,1);
 imshow(gri);
 title('Original Gray Image');
 
-subplot(3,4,4);
+subplot(4,3,4);
 imshow(grilog_ax);
 title('Power law transform with C=3, gamma=2');
 
 
-subplot(3,4,5);
+subplot(4,3,5);
 imshow(grilog_bx);
 title('Power law transform with C=1, gamma=2');
 
-subplot(3,4,6);
+subplot(4,3,6);
 imshow(grilog_cx);
 title('Power law transform with C=1/3, gamma=2');
 
-subplot(3,4,7);
+subplot(4,3,7);
 imshow(grilog_ay);
 title('Power law transform with C=3, gamma=1');
 
-subplot(3,4,8);
+subplot(4,3,8);
 imshow(grilog_by);
 title('Power law transform with C=1, gamma=1');
 
-subplot(3,4,9);
+subplot(4,3,9);
 imshow(grilog_cy);
 title('Power law transform with C=1/3, gamma=1');
 
-subplot(3,4,10);
+subplot(4,3,10);
 imshow(grilog_az);
 title('Power law transform with C=3, gamma=0.5');
 
-subplot(3,4,11);
+subplot(4,3,11);
 imshow(grilog_bz);
 title('Power law transform with C=1, gamma=0.5');
 
-subplot(3,4,12);
+subplot(4,3,12);
 imshow(grilog_cz);
 title('Power law transform with C=1/3, gamma=0.5');
