@@ -11,12 +11,15 @@ const_a=3;
 const_b=1;
 const_c=0.33;
 
+gamma_x=2;
+gamma_y=1;
+gamma_z=0.5;
+
 gri2 = im2double(gri);
 gri2 = gri2./max(gri2);
 
-grilog_a=gri2;
-grilog_b=gri2;
-grilog_c=gri2;
+grilog_ax=grilog_bx=grilog_cx=grilog_ay=grilog_by=gri2;
+grilog_cy=grilog_az=grilog_bz=grilog_cz=gri2;
 
 
 for i=1:x_
@@ -33,29 +36,60 @@ for i=1:x_
   end
 end
 
-function normaliz_(x)
-  return x./max(x);
-end
+%function normaliz_(x)
+%  return x./max(x);
+%end
 
-grilog_ax = grilog_a./max(grilog_a);
-grilog_ax = grilog_b./max(grilog_b);
-grilog_ax = grilog_c./max(grilog_c);
+grilog_ax = grilog_ax./max(grilog_ax);
+grilog_bx = grilog_bx./max(grilog_bx);
+grilog_cx = grilog_cx./max(grilog_cx);
+
+grilog_ay = grilog_ay./max(grilog_ay);
+grilog_by = grilog_by./max(grilog_by);
+grilog_cy = grilog_cy./max(grilog_cy);
+
+grilog_az = grilog_az./max(grilog_az);
+grilog_bz = grilog_bz./max(grilog_bz);
+grilog_cz = grilog_cz./max(grilog_cz);
 
 
-subplot(2,2,1);
+subplot(3,4,1);
 imshow(gri);
 title('Original Gray Image');
 
-subplot(2,2,2);
-imshow(grilog_a);
-title('Log XForm with Const=3');
+subplot(3,4,4);
+imshow(grilog_ax);
+title('Power law transform with C=3, gamma=2');
 
 
-subplot(2,2,3);
-imshow(grilog_b);
-title('Log XForm with Const=1');
+subplot(3,4,5);
+imshow(grilog_bx);
+title('Power law transform with C=1, gamma=2');
 
+subplot(3,4,6);
+imshow(grilog_cx);
+title('Power law transform with C=1/3, gamma=2');
 
-subplot(2,2,4);
-imshow(grilog_c);
-title('Log XForm with Const=0.3');
+subplot(3,4,7);
+imshow(grilog_ay);
+title('Power law transform with C=3, gamma=1');
+
+subplot(3,4,8);
+imshow(grilog_by);
+title('Power law transform with C=1, gamma=1');
+
+subplot(3,4,9);
+imshow(grilog_cy);
+title('Power law transform with C=1/3, gamma=1');
+
+subplot(3,4,10);
+imshow(grilog_az);
+title('Power law transform with C=3, gamma=0.5');
+
+subplot(3,4,11);
+imshow(grilog_bz);
+title('Power law transform with C=1, gamma=0.5');
+
+subplot(3,4,12);
+imshow(grilog_cz);
+title('Power law transform with C=1/3, gamma=0.5');
