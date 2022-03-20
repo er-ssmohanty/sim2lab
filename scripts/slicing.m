@@ -32,4 +32,6 @@ imshow(gri_crp_4by4);
 S  = axes( 'visible', 'off', 'title', 'Image Slicing' );%%uncomment in octave
 hold off;                                                         %%uncomment in octave
 
-% sgtitle('Image Slicing');                                           %$make it a comment in octave
+% sgtitle('Image Slicing');                                           %%make it a comment in octave
+
+saveas(1,"~/octave/sim2lab/result_images/slicing_result.png");
