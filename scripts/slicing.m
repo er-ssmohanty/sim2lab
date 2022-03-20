@@ -14,7 +14,6 @@ gri_crp_2by4 = gri([1:x_mid],[y_mid:y_]);
 gri_crp_3by4 = gri([x_mid:x_],[1:y_mid]);
 gri_crp_4by4 = gri([x_mid:x_],[y_mid:y_]);
 
-
 subplot(2,2,1);
 imshow(gri_crp_1by4);
 
