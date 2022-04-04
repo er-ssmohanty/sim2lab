@@ -1,0 +1,13 @@
+for i = 1:shape_(1)
+    for j = 1:shape_(2)
+        neg_(i,j,1) = 255-I(i,j,1);
+        neg_(i,j,2) = 255-I(i,j,2);
+        neg_(i,j,3) = 255-I(i,j,3);
+    end
+end
+neg_(:,:,1)= 255-I(:,:,1);
+neg_(:,:,2)= 255-I(:,:,2);
+neg_(:,:,3)= 255-I(:,:,3);
+
+shape_ = size(I);
+width = shape_(1)
