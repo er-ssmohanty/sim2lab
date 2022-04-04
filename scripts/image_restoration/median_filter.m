@@ -17,7 +17,7 @@ for i = 1:x_
     subim_vect(1:3) = [wrapper_im(i,j),wrapper_im(i,j+1),wrapper_im(i,j+2)];
     subim_vect(4:6) = [wrapper_im(i+1,j),wrapper_im(i+1,j+1),wrapper_im(i+1,j+2)];
     subim_vect(7:9) = [wrapper_im(i+2,j),wrapper_im(i+2,j+1),wrapper_im(i+2,j+2)];
-    wrapper_im(i+1,j+1) = mean(subim_vect,"g");  
+    wrapper_im(i+1,j+1) = median(subim_vect);  
   end
 end
 
@@ -27,10 +27,10 @@ gri_final = uint8(gri_final);
 
 subplot(1,2,1);
 imshow(gri_final);
-title('Denoised Image using GMF');%d_not
+title('Denoised Image using Median Filter');%d_not
 
 subplot(1,2,2);
 imshow(gri);
 title('Original Gray Image');
 
-saveas(1,"result_images/generic_gm_filter_0.png");
+saveas(1,"result_images/median_filter_0.png");

@@ -2,7 +2,7 @@ clc;
 close all;
 clear all;
  
-rgbi = imread('source_images/putin-stock-free.jpg');
+rgbi = imread('source_images/a_woman.jpg');
 gri = rgb2gray(rgbi);
 
 [x_ y_] = size(gri);
