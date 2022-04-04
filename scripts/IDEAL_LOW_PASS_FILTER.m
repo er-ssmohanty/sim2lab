@@ -4,13 +4,11 @@ clc;
 close all;
 clear all;
  
-rgbi = imread('~/octave/sim2lab/source_images/putin-stock-free.jpg');
+rgbi = imread('source_images/putin-stock-free.jpg');
 gri = rgb2gray(rgbi);
-d_not = mean((gri));
 
 [x_ y_] = size(gri);
-x_mid = floor(x_/2);
-y_mid = floor(y_/2);
+
 
 gri_centred = gri;
 for i=1:x_
@@ -23,6 +21,7 @@ end
 gri_fft_orginal = fft(gri_centred);
 
 %(-1) X+Y
+d_not = mean((gri_fft_orginal));
 
 %generic filter starts
 
