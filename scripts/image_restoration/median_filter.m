@@ -10,6 +10,12 @@ gri = rgb2gray(rgbi);
 wrapper_im = rand(x_+2,y_+2);
 wrapper_im(2:x_+1,2:y_+1)=gri;
 
+%edge
+wrapper_im(1,:)=wrapper_im(2,:);
+wrapper_im(x_+2,:)=wrapper_im(x_+1,:);
+wrapper_im(:,1)=wrapper_im(:,2);
+wrapper_im(:,y_+2)=wrapper_im(:,y_+1);
+
 subim_vect = rand(1,9);
 
 for i = 1:x_
