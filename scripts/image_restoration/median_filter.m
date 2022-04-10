@@ -1,6 +1,6 @@
-#############
+################################################################################
 #
-#############
+################################################################################ 
 function wrapper_im = imwrap(a_gray_image)
 	[x_ y_] = size(a_gray_image);
 	wrapper_im = rand(x_+2,y_+2);
@@ -11,10 +11,9 @@ function wrapper_im = imwrap(a_gray_image)
 	wrapper_im(:,y_+2)=wrapper_im(:,y_+1);
 	#return wrapper_im;
 end
-
-###########
+################################################################################
 #
-###########
+################################################################################
 function image_ = filter_any(image_,m_,n_)
 	subim_vect = rand(1,(m_*n_)-1);
 	for i = 1:x_
@@ -27,9 +26,9 @@ function image_ = filter_any(image_,m_,n_)
 	end
 	#return image_;
 end
-##########
+################################################################################
 #
-##########
+################################################################################
 function result_im = main(Image_full_path,sub_image_m=3,sub_image_n=3)
 	rgbi = imread(Image_full_path);
 	gri = rgb2gray(rgbi);
@@ -38,14 +37,18 @@ function result_im = main(Image_full_path,sub_image_m=3,sub_image_n=3)
 	unwrapped_filtered = filtered(2:x_+1,2:y_+1);
 	result_im = uint8(unwrapped_filtered);
 end
-####################
+################################################################################
 #
-####################
+################################################################################
+function clean_()
+	clc;
+	close all;
+	clear all;
+end
+################################################################################
+################################################################################
 
-clc;
-close all;
-clear all;
-
+clean_();
 image_path = 'source_images/spices0.jpg';
 gri_final = main(image_path);
 gri = rgb2gray(imread(image_path));
